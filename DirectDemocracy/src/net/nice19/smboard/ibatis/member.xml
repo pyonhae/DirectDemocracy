@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="member">
+	<typeAlias alias="MemberModel" type="net.nice19.smboard.member.model.MemberModel"/>
+	
+	<select id="selectOneMember" parameterClass="int" resultClass="MemberModel">
+		select idx, userId, userPw, userName, joinDate
+		from JMBOARD_MEMBER
+		where idx = #idx#
+	</select>
+	
+	<select id="selectAllMember" resultClass="MemberModel">
+		select idx, userId, userPw, userName, joinDate
+		from JMBOARD_MEMBER
+	</select>
+	
+	<select id="findByUserId" parameterClass="String" resultClass="MemberModel">
+		select 
+			idx,
+			userId,
+			userPw,
+			userName,
+			joinDate
+		from JMBOARD_MEMBER
+		where userId = #userId#
+	</select>
+	
+	<insert id="addMember" parameterClass="MemberModel">
+		insert into JMBOARD_MEMBER(userId, userPw, userName, joinDate)
+		values(#userId#, #userPw#, #userName#, now())
+	</insert>		
+</sqlMap>
+
+
+
+
+
+
+
