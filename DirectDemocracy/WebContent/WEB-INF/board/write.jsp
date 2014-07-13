@@ -21,7 +21,7 @@
 			$("#content").focus();
 			return false;
 		}		
-		return true;
+		return true; 
 	}
 </script>
 </head>
