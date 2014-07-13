@@ -22,6 +22,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+// git test  by donguk ferfr
+
 @Controller
 @RequestMapping("/board")
 public class BoardController {
