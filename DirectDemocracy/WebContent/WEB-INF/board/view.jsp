@@ -15,7 +15,7 @@
 			case 1:
 				alert("잘못된 접근 경로입니다!");
 				break;
-			case 2:
+			case 2: 
 				alert("댓글이 있어 글을 삭제하실 수 없습니다!");
 				break;
 			}
