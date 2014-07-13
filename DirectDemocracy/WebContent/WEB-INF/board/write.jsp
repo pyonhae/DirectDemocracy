@@ -15,7 +15,7 @@
 			$("#subject").focus();
 			return false;
 		}
-		  
+		
 		if($("#content").val() == null || $("#content").val() == ""){
 			alert("내용을 입력해 주세요!");
 			$("#content").focus();
