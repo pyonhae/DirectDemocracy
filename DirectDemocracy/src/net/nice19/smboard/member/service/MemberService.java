@@ -5,6 +5,8 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import net.nice19.smboard.member.dao.MemberDao;
 import net.nice19.smboard.member.model.MemberModel;
 
+// TEST 
+
 public class MemberService implements MemberDao{
 private SqlMapClientTemplate sqlMapClientTemplate;
 	
