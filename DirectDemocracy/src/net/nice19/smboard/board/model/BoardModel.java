@@ -1,6 +1,10 @@
 package net.nice19.smboard.board.model;
 
-public class BoardModel {
+import java.io.Serializable;
+
+public class BoardModel implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	private int rnum;
 	private int idx;
 	private String writer;
@@ -79,5 +83,35 @@ public class BoardModel {
 	}
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idx;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BoardModel other = (BoardModel) obj;
+		if (idx != other.idx)
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "BoardModel [rnum=" + rnum + ", idx=" + idx + ", writer="
+				+ writer + ", subject=" + subject + ", content=" + content
+				+ ", hitcount=" + hitcount + ", recommendcount="
+				+ recommendcount + ", comment=" + comment + ", writeDate="
+				+ writeDate + ", writerId=" + writerId + ", fileName="
+				+ fileName + "]";
 	}
 }

@@ -1,6 +1,10 @@
 package net.nice19.smboard.board.model;
 
-public class BoardCommentModel {
+import java.io.Serializable;
+
+public class BoardCommentModel implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	private int idx;
 	private String writer;
 	private String content;
@@ -43,5 +47,32 @@ public class BoardCommentModel {
 	}
 	public void setWriterId(String writerId) {
 		this.writerId = writerId;
-	}	
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idx;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BoardCommentModel other = (BoardCommentModel) obj;
+		if (idx != other.idx)
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "BoardCommentModel [idx=" + idx + ", writer=" + writer
+				+ ", content=" + content + ", writeDate=" + writeDate
+				+ ", linkedArticleNum=" + linkedArticleNum + ", writerId="
+				+ writerId + "]";
+	}
 }
