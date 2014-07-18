@@ -16,7 +16,7 @@ public class SessionInterceptor extends HandlerInterceptorAdapter{
 		//
 		
 		// pass through when access login.do, join.do
-		if(request.getRequestURI().equals("/DirectDemocracy/login.do") || request.getRequestURI().equals("/DirectDemocracy/member/join.do")){	//test
+		if(request.getRequestURI().equals(request.getContextPath() +"/login.do") || request.getRequestURI().equals(request.getContextPath() +"/member/join.do")){	//test
 		//if(request.getRequestURI().equals("/login.do") || request.getRequestURI().equals("/member/join.do")){	//server
 			if(userId != null){
 				response.sendRedirect(request.getContextPath() + "/board/list.do");
